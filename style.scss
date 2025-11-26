@@ -67,20 +67,33 @@ body {
   @media (max-width: 1000px) {
     grid-template-columns: repeat(2, 1fr);
     padding: 1rem;
+    .card-one-bg {
+      display: none;
+    }
   }
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
     padding: 1rem;
+    .card-one-bg {
+      display: none;
+    }
   }
 }
 
 .card {
   &-one {
+    position: relative;
     background-color: var(--Purple-500);
     grid-column: span 2;
     @media (max-width: 600px) {
       grid-column: span 1;
       order: 1;
+    }
+    &-bg {
+      position: absolute;
+      top: 0;
+      right: 8rem;
+      z-index: 1;
     }
     & .card__name,
     .card__object {
@@ -88,6 +101,7 @@ body {
     }
     & .card__paragraph-1 {
       color: var(--Purple-50);
+      z-index: 2;
     }
     & .card__paragraph-2 {
       color: var(--Grey-200);
